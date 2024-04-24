@@ -1,0 +1,20 @@
+entity UserLogin {
+  username String required,
+  password String required
+}
+
+entity Alarm {
+  id String,
+  time ZonedDateTime,
+  alarmTime ZonedDateTime,
+  enabled Boolean,
+  sound String,
+  label String,
+  repeatDays LocalDate,
+  snoozeEnabled Boolean,
+  snoozeDuration Integer
+}
+
+relationship OneToMany {
+  UserLogin{username} to Alarm{userLogin}
+}
