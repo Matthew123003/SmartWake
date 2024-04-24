@@ -50,6 +50,9 @@ public class CacheConfiguration {
             createCache(cm, smartwake.domain.User.class.getName());
             createCache(cm, smartwake.domain.Authority.class.getName());
             createCache(cm, smartwake.domain.User.class.getName() + ".authorities");
+            createCache(cm, smartwake.domain.UserLogin.class.getName());
+            createCache(cm, smartwake.domain.UserLogin.class.getName() + ".usernames");
+            createCache(cm, smartwake.domain.Alarm.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

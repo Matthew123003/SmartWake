@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Alarm.
+    -->
+    <changeSet id="20240424150059-1" author="jhipster">
+        <createTable tableName="alarm">
+            <column name="id" type="varchar(255)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="time" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="alarm_time" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="enabled" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="sound" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="label" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="repeat_days" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="snooze_enabled" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="snooze_duration" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="user_login_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="alarm" columnName="time" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="alarm" columnName="alarm_time" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20240424150059-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/alarm.csv"
+                  separator=";"
+                  tableName="alarm"
+                  usePreparedStatements="true">
+            <column name="id" type="string"/>
+            <column name="time" type="date"/>
+            <column name="alarm_time" type="date"/>
+            <column name="enabled" type="boolean"/>
+            <column name="sound" type="string"/>
+            <column name="label" type="string"/>
+            <column name="repeat_days" type="date"/>
+            <column name="snooze_enabled" type="boolean"/>
+            <column name="snooze_duration" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

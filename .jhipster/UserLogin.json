@@ -1,0 +1,29 @@
+{
+  "annotations": {
+    "changelogDate": "20240424150058"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "username",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "password",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "UserLogin",
+  "relationships": [
+    {
+      "otherEntityName": "alarm",
+      "otherEntityRelationshipName": "userLogin",
+      "relationshipName": "username",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

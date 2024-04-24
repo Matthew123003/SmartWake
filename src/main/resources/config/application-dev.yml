@@ -21,6 +21,9 @@ logging:
     smartwake: DEBUG
 
 spring:
+  jpa:
+    properties:
+      hibernate.dialect: org.hibernate.dialect.H2Dialect
   devtools:
     restart:
       enabled: true

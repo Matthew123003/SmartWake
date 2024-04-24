@@ -26,6 +26,9 @@ management:
         enabled: false
 
 spring:
+  jpa:
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQLDialect
   devtools:
     restart:
       enabled: false
@@ -34,8 +37,8 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:mysql://localhost:3306/SmartWake?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
-    username: root
-    password:
+    username: matt
+    password: zipcode0
     hikari:
       poolName: Hikari
       auto-commit: false

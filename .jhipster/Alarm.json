@@ -1,0 +1,55 @@
+{
+  "annotations": {
+    "changelogDate": "20240424150059"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "time",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "alarmTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "enabled",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "sound",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "label",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "repeatDays",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "snoozeEnabled",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "snoozeDuration",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "Alarm",
+  "relationships": [
+    {
+      "otherEntityName": "userLogin",
+      "otherEntityRelationshipName": "username",
+      "relationshipName": "userLogin",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}
