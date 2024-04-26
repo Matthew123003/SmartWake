@@ -164,5 +164,6 @@
   },
   "cacheDirectories": [
     "node_modules"
-  ]
+  ],
+  "proxy": "http://localhost:8080"
 }
